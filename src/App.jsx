@@ -1,11 +1,27 @@
 import './App.css'
 
+// importo le pagine
+import HomePage from './pages/HomePage'
+import MoviePage from './pages/MoviePage'
+// importo il layout
+import DefaultLayout from './layouts/DefaultLayout'
+
+// importo gli elementi React per la gestione del router
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+
+
 function App() {
   return (
     <>
-      <div>
-        <h1>Benvenuti nella nostra bacheca di film</h1>
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<DefaultLayout />}>
+            <Route path='/' element={<HomePage />} />
+            <Route path='/movies/:id' element={<MoviePage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
