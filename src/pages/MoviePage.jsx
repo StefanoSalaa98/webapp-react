@@ -1,6 +1,9 @@
 // import di router-dom per link
 import { Link } from "react-router-dom"
 
+// importo il componente per le recensioni di uno specifico film
+import ReviewMovie from "../components/ReviewMovie"
+
 /// creo la pagina del singolo film
 const MoviePage = () => {
     return (
@@ -14,8 +17,9 @@ const MoviePage = () => {
                 <header className="d-flex justify-content-between align-items-center mb-4">
                     <h4>Our community reviews</h4>
                 </header>
-                {/* Qui verranno inserite le Reviews del film */}
-                Lista delle reviews del film
+                <ReviewMovie />
+                <ReviewMovie />
+                <ReviewMovie />
             </section>
             <footer className="border-top border-1 pt-2 mb-3 d-flex justify-content-end">
                 <Link className="btn btn-secondary" to="/">Back to home</Link>
