@@ -41,6 +41,21 @@
   color: #888;
 } */
 
+/* stile lista film */
+
+.card {
+
+  img {
+    aspect-ratio: 0.9;
+  }
+
+  .card-text {
+    font-size: 0.95rem;
+  }
+}
+
+/* stile singolo film */
+
 .card-body h5 {
   display: inline
 }
