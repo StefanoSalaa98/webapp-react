@@ -3,6 +3,7 @@ import './App.css'
 // importo le pagine
 import HomePage from './pages/HomePage'
 import MoviePage from './pages/MoviePage'
+import NotFoundPage from './pages/NotFoundPage'
 // importo il layout
 import DefaultLayout from './layouts/DefaultLayout'
 
@@ -19,6 +20,7 @@ function App() {
           <Route element={<DefaultLayout />}>
             <Route path='/' element={<HomePage />} />
             <Route path='/movies/:id' element={<MoviePage />} />
+            <Route path='*' element={<NotFoundPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
