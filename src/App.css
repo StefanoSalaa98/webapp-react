@@ -80,6 +80,7 @@
   }
 }
 
-.stars {
-  width: 16%;
+.review-title {
+  display: flex;
+  justify-content: space-between;
 }
