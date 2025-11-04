@@ -2,19 +2,24 @@
 import { Link } from "react-router-dom"
 
 // creo il componente card del film
-const BookCard = () => {
+const BookCard = ({ movieProp }) => {
+
+    // destrutturiamo oggetto passato da props
+    const { id, title, director, genre, release_year, abstract, image, created_at, updated_at } = movieProp;
+
     return (
         <div className="card mb-4">
-            <img src="https://c8.alamy.com/compit/2c4x052/inception-2010-diretto-da-christopher-nolan-e-con-leonardo-dicaprio-joseph-gordon-levitt-ellen-page-tom-hardy-e-ken-watanabe-una-squadra-si-rompe-al-subconscio-di-un-uomo-d-affari-usando-la-tecnologia-di-condivisione-di-sogno-per-piantare-un-seme-per-influenzare-la-sua-decisione-nel-mondo-reale-2c4x052.jpg" alt="titolo film" />
+            <img src={image} alt={title} className="card-img-top" />
             <div className="card-body">
-                <h5 className="card-title">Titolo Film</h5>
-                <address><i>Autore</i></address>
+                <h5 className="card-title">{title}</h5>
+                <address><i>{director}</i></address>
                 <p className="card-text">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci repellat blanditiis magnam natus explicabo impedit eveniet hic nesciunt commodi praesentium, odio asperiores exercitationem et non nisi ipsam maxime fugiat perspiciatis?
+                    {abstract}
                 </p>
-                <Link to="movies/1" className="btn btn-primary">
+                <Link to={`movies/${id}`} className="btn btn-primary">
                     See more
                 </Link>
+
             </div>
         </div>
     )
