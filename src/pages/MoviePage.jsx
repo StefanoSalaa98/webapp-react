@@ -45,6 +45,7 @@ const MoviePage = () => {
             <section id="reviews">
                 <header className="d-flex justify-content-between align-items-center">
                     <h4>Our community reviews</h4>
+                    <span>{movie?.average_vote}</span>
                 </header>
                 {movie?.reviews.map(review => (
                     <ReviewMovie reviewProp={review} key={review.id} />
