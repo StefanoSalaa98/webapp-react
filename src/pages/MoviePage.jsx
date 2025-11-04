@@ -55,6 +55,7 @@ const MoviePage = () => {
                 <header className="d-flex justify-content-between align-items-center">
                     <h4>Our community reviews</h4>
                     <div className="stars">
+                        <strong>Average: {movie?.average_vote}</strong>
                         {movie?.average_vote && <CounterStar voteAverage={movie?.average_vote} />}
                     </div>
                 </header>

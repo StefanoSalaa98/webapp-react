@@ -1,3 +1,6 @@
+// importo il componente per le stelle della media voto
+import CounterStar from "../components/CounterStar"
+
 // creo il componente per le recensioni di uno specifico film
 const ReviewMovie = ({ reviewProp }) => {
 
@@ -10,7 +13,9 @@ const ReviewMovie = ({ reviewProp }) => {
                 <p className="card-text">
                     {text}
                 </p>
-                <strong>Vote: {vote}</strong>
+                <strong>Vote: {vote}
+                    <CounterStar voteAverage={vote} />
+                </strong>
                 <address><i>By {name}</i></address>
             </div>
         </div>
