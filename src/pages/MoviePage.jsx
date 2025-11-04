@@ -11,6 +11,9 @@ import { useState, useEffect } from "react"
 // importo il componente per le recensioni di uno specifico film
 import ReviewMovie from "../components/ReviewMovie"
 
+// importo il componente per le stelle della media voto
+import CounterStar from "../components/CounterStar"
+
 /// creo la pagina del singolo film
 const MoviePage = () => {
 
@@ -45,7 +48,9 @@ const MoviePage = () => {
             <section id="reviews">
                 <header className="d-flex justify-content-between align-items-center">
                     <h4>Our community reviews</h4>
-                    <span>{movie?.average_vote}</span>
+                    <div className="stars">
+                        {movie?.average_vote && <CounterStar voteAverage={movie?.average_vote} />}
+                    </div>
                 </header>
                 {movie?.reviews.map(review => (
                     <ReviewMovie reviewProp={review} key={review.id} />
