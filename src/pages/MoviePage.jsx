@@ -2,7 +2,7 @@
 import axios from "axios"
 
 // import di router-dom per link
-import { Link, useParams } from "react-router-dom"
+import { Link, useParams, useNavigate } from "react-router-dom"
 // useParams mi permette di leggere il paramanetro dinamico per capire quale film devo caricare
 
 // import state e effetc
@@ -17,6 +17,9 @@ import CounterStar from "../components/CounterStar"
 /// creo la pagina del singolo film
 const MoviePage = () => {
 
+    // creo istanza di Navigate
+    const redirect = useNavigate();
+
     // variabile di stato del singolo film
     const [movie, setMovie] = useState();
 
@@ -27,7 +30,10 @@ const MoviePage = () => {
     const fecthMovie = () => {
         axios.get('http://localhost:3000/api/movies/' + id)
             .then(response => { setMovie(response.data) })
-            .catch(error => { console.log(error) })
+            .catch(error => {
+                console.log(error)
+                if (error.status === 404) redirect('/404')
+            })
     }
 
     // faccio partire la chiamata solo al primo montaggio del componente
