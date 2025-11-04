@@ -40,3 +40,11 @@
 .read-the-docs {
   color: #888;
 } */
+
+.card-body h5 {
+  display: inline
+}
+
+.card-text {
+  margin-top: 10px;
+}

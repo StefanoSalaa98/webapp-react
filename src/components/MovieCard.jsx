@@ -13,6 +13,8 @@ const BookCard = ({ movieProp }) => {
             <div className="card-body">
                 <h5 className="card-title">{title}</h5>
                 <address><i>{director}</i></address>
+                <span>GENRE:</span><h5> {genre} </h5> <br></br>
+                <span>RELEASE YEAR: </span><h5>{release_year}</h5>
                 <p className="card-text">
                     {abstract}
                 </p>

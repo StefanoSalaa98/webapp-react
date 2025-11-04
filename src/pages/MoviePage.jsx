@@ -14,7 +14,7 @@ const MoviePage = () => {
                 <p>lorem ipsm dolor sit amet</p>
             </header>
             <section id="reviews">
-                <header className="d-flex justify-content-between align-items-center mb-4">
+                <header className="d-flex justify-content-between align-items-center">
                     <h4>Our community reviews</h4>
                 </header>
                 <ReviewMovie />
