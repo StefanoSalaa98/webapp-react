@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 // creo il componente card del film
 const BookCard = ({ movieProp }) => {
 
-    // destrutturiamo oggetto passato da props
+    // destrutturo oggetto film passato da props
     const { id, title, director, genre, release_year, abstract, image, created_at, updated_at } = movieProp;
 
     return (

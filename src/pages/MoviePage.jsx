@@ -33,12 +33,14 @@ const MoviePage = () => {
     return (
         <>
             <header id="movie" className="border-bottom border-1 mb-3">
-                <div className="d-flex mb-3">
+                <div className=" image-film d-flex mb-3">
                     <img src={movie?.image} alt={movie?.title} />
                 </div>
-                <h1>{movie?.title}</h1>
-                <h3 className="text-muted"><i>By {movie?.director}</i></h3>
-                <p>{movie?.abstract}</p>
+                <div className="info">
+                    <h1>{movie?.title}</h1>
+                    <h3 className="text-muted"><i>By {movie?.director}</i></h3>
+                    <p>{movie?.abstract}</p>
+                </div>
             </header>
             <section id="reviews">
                 <header className="d-flex justify-content-between align-items-center">

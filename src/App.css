@@ -48,3 +48,19 @@
 .card-text {
   margin-top: 10px;
 }
+
+#movie {
+  display: flex;
+
+  .info {
+    margin-left: 20px;
+  }
+}
+
+.image-film {
+  width: 300px;
+
+  img {
+    width: 100%;
+  }
+}
