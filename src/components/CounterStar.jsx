@@ -5,7 +5,7 @@ import { FaStarHalfStroke } from "react-icons/fa6";
 
 const CounterStar = (props) => {
 
-    const { voteAverage } = props;
+    const { voteAverage, color } = props;
 
     // Calcolo il numero di stelle piene e di stelle vuote
 
@@ -27,13 +27,13 @@ const CounterStar = (props) => {
     return (
         <>
             {filledArray.map(() =>
-                < FaStar color="yellow" />
+                < FaStar color={color} />
             )}
             {halfArray.map(() =>
-                <FaStarHalfStroke color="yellow" />
+                <FaStarHalfStroke color={color} />
             )}
             {emptyArray.map(() =>
-                <FaRegStar color="yellow" />
+                <FaRegStar color={color} />
             )}
         </>
     )

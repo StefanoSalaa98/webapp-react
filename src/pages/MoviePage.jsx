@@ -60,7 +60,7 @@ const MoviePage = () => {
                     <div className="stars">
                         <strong>Average: </strong>
                         <div className="star-container">
-                            {movie?.average_vote && <CounterStar voteAverage={movie?.average_vote} />}
+                            {movie?.average_vote && <CounterStar voteAverage={movie?.average_vote} color="yellow" />}
                         </div>
                     </div>
                 </header>

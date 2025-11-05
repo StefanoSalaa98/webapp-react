@@ -16,7 +16,7 @@ const ReviewMovie = ({ reviewProp }) => {
                 <div className="stars">
                     <strong>Vote: {vote}</strong>
                     <div className="star-container">
-                        <CounterStar voteAverage={vote} />
+                        <CounterStar voteAverage={vote} color="yellow" />
                     </div>
                 </div>
                 <address><i>By {name}</i></address>
