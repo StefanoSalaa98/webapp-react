@@ -11,6 +11,9 @@ import { useState, useEffect } from "react"
 // importo il componente per le recensioni di uno specifico film
 import ReviewMovie from "../components/ReviewMovie"
 
+// importo il componente form nuova recensione
+import ReviewForm from "../components/ReviewForm"
+
 // importo il componente per le stelle della media voto
 import CounterStar from "../components/CounterStar"
 
@@ -66,6 +69,10 @@ const MoviePage = () => {
                 ))}
 
 
+            </section>
+            <section>
+                {/* passo al componente form l'id del film e la funzione per la chiamata axios, in modo tale che appena verrà inserita una nuova recensione, essa apparirà subito in pagina, grazie al fatto che avrò richiamato la funzione fecthMovie*/}
+                <ReviewForm idProp={id} reloadReviews={fecthMovie} />
             </section>
             <footer className="border-top border-1 pt-2 mb-3 d-flex justify-content-end">
                 <Link className="btn btn-secondary" to="/">Back to home</Link>
