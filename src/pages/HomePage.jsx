@@ -4,7 +4,7 @@ import axios from "axios"
 // import state e effetc
 import { useState, useEffect } from "react"
 
-// importo il componente card libro
+// importo il componente card movie
 import MovieCard from "../components/MovieCard"
 
 // creo la pagina di HomePage
