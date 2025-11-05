@@ -84,3 +84,12 @@
   display: flex;
   justify-content: space-between;
 }
+
+.stars {
+  display: flex;
+
+  .star-container {
+    margin-left: 5px;
+    margin-top: -2px;
+  }
+}

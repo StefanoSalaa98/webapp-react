@@ -13,9 +13,12 @@ const ReviewMovie = ({ reviewProp }) => {
                 <p className="card-text">
                     {text}
                 </p>
-                <strong>Vote: {vote}
-                    <CounterStar voteAverage={vote} />
-                </strong>
+                <div className="stars">
+                    <strong>Vote: {vote}</strong>
+                    <div className="star-container">
+                        <CounterStar voteAverage={vote} />
+                    </div>
+                </div>
                 <address><i>By {name}</i></address>
             </div>
         </div>

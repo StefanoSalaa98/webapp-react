@@ -56,7 +56,9 @@ const MoviePage = () => {
                     <h4>Our community reviews</h4>
                     <div className="stars">
                         <strong>Average: </strong>
-                        {movie?.average_vote && <CounterStar voteAverage={movie?.average_vote} />}
+                        <div className="star-container">
+                            {movie?.average_vote && <CounterStar voteAverage={movie?.average_vote} />}
+                        </div>
                     </div>
                 </header>
                 {movie?.reviews.map(review => (
