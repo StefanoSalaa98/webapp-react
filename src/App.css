@@ -93,3 +93,23 @@
     margin-top: -2px;
   }
 }
+
+/* stile pagina rating */
+
+.rating {
+
+  .first {
+    background-color: gold;
+    transform: scale(1.1);
+  }
+
+  .second {
+    background-color: silver;
+    transform: scale(1.06);
+  }
+
+  .third {
+    background-color: #CD7F32;
+    transform: scale(1.03);
+  }
+}
