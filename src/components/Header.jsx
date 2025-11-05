@@ -8,6 +8,7 @@ const Header = () => {
             <div className="container-fluid justify-content-start">
                 {/* se premuto torna alla Home */}
                 <Link className="navbar-brand" to="/">Movies</Link>
+                <Link className="navbar-brand" to="/rating">Movies Rating</Link>
             </div>
         </nav>
     )
