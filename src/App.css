@@ -96,6 +96,15 @@
 
 /* stile pagina rating */
 
+.card-rating {
+  display: flex;
+  justify-content: space-between;
+
+  .podium {
+    font-size: 6rem;
+  }
+}
+
 .rating {
 
   .first {
@@ -111,5 +120,27 @@
   .third {
     background-color: #CD7F32;
     transform: scale(1.03);
+  }
+}
+
+/* stile overlay */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .spinner-border {
+    width: 200px;
+    height: 200px;
+    font-size: 2rem;
   }
 }
