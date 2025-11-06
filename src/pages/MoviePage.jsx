@@ -17,8 +17,14 @@ import ReviewForm from "../components/ReviewForm"
 // importo il componente per le stelle della media voto
 import CounterStar from "../components/CounterStar"
 
+// importo hook per il contesto
+import { useGlobal } from "../contexts/globalContext"
+
 /// creo la pagina del singolo film
 const MoviePage = () => {
+
+    // estrapolo dal context la variabile di stato
+    const { setIsLoading } = useGlobal();
 
     // creo istanza di Navigate
     const redirect = useNavigate();
@@ -31,12 +37,16 @@ const MoviePage = () => {
 
     // prepariamo funzione per la chiamata axios
     const fecthMovie = () => {
+        // appena entro nella funzione per la chiamata axios, attivo il loading 
+        setIsLoading(true);
         axios.get('http://localhost:3000/api/movies/' + id)
             .then(response => { setMovie(response.data) })
             .catch(error => {
                 console.log(error)
                 if (error.status === 404) redirect('/404')
             })
+            // terminata la chiamata axios, disattivo il loading
+            .finally(() => { setIsLoading(false) })
     }
 
     // faccio partire la chiamata solo al primo montaggio del componente

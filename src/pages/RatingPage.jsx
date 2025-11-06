@@ -7,8 +7,14 @@ import { useState, useEffect } from "react"
 // importo il componente card rating
 import RatingCard from "../components/RatingCard"
 
+// importo hook per il contesto
+import { useGlobal } from "../contexts/globalContext"
+
 // creo la pagina di RatingPage
 const RatingPage = () => {
+
+    // estrapolo dal context la variabile di stato
+    const { setIsLoading } = useGlobal();
 
     // variabile di stato dei film
     const [movies, setMovies] = useState();
@@ -18,11 +24,15 @@ const RatingPage = () => {
 
     // chiamata axios per ricevere la lista dei film
     const fecthMovies = () => {
+        // appena entro nella funzione per la chiamata axios, attivo il loading 
+        setIsLoading(true);
         axios.get('http://localhost:3000/api/movies/rating')
             .then(response => {
                 setMovies(response.data);
             })
             .catch(error => { console.log(error) })
+            // terminata la chiamata axios, disattivo il loading
+            .finally(() => { setIsLoading(false) })
     }
 
     useEffect(() => {
@@ -39,8 +49,6 @@ const RatingPage = () => {
             // assegno ad ogni film la sua posizione corrispondente in classifica
             for (let i = 1; i <= orderedMovies.length; i++) {
                 orderedMovies[i - 1].position = i;
-                console.log(orderedMovies[i]);
-                console.log(orderedMovies.length);
             }
             setRatingMovies(orderedMovies);
         }

@@ -44,14 +44,14 @@ const ReviewForm = ({ idProp, reloadReviews }) => {
             .catch((err) => console.log(err))
     }
 
-    // Funzione per cancellare il testo quando l'input riceve il focus
+    // Funzione per cancellare il testo nel campo name quando l'input riceve il focus
     const clearInput = () => {
         if (formData.name === delfaultName) {
             setFormData({ ...formData, "name": '' });
         }
     }
 
-    // Funzione per ripristinare il testo se l'utente lascia il campo vuoto
+    // Funzione per ripristinare il testo nel campo name se l'utente lascia il campo vuoto
     const restoreInput = () => {
         if (formData.name === '') {
             setFormData({ ...formData, "name": delfaultName });
