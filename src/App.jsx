@@ -11,21 +11,24 @@ import DefaultLayout from './layouts/DefaultLayout'
 // importo gli elementi React per la gestione del router
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-
+// importoil provider context globale
+import { GlobalProvider } from './contexts/globalContext'
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<DefaultLayout />}>
-            <Route path='/' element={<HomePage />} />
-            <Route path='/movies/:id' element={<MoviePage />} />
-            <Route path='/rating' element={<RatingPage />} />
-            <Route path='*' element={<NotFoundPage />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <GlobalProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<DefaultLayout />}>
+              <Route path='/' element={<HomePage />} />
+              <Route path='/movies/:id' element={<MoviePage />} />
+              <Route path='/rating' element={<RatingPage />} />
+              <Route path='*' element={<NotFoundPage />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </GlobalProvider>
     </>
   )
 }
